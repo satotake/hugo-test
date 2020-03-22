@@ -1,0 +1,8 @@
+{{ range first 10 .Pages }}
+    <article>
+      <div>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ .Summary }}
+      </div>
+    </article>
+{{ end }}
