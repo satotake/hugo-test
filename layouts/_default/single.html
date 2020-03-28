@@ -1,1 +1,21 @@
+<ul>
+{{ range $h1 := .TableOfContentsHeaders }}
+  <li>
+    <a class="h1" href="{{ $h1.ID }}"> {{ $h1.Text | safeHTML }} </a>
+    <ul> 
+      {{ range $h2 := $h1.Headers }} 
+      <li>
+        <a class="h2" href="{{ $h2.ID }}"> {{ $h2.Text | safeHTML }} </a>
+        <ul>
+        {{ range $h3 := $h2.Headers}}
+          <li><a class="h3" href="{{ $h3.ID }}"> {{ $h3.Text | safeHTML }} </a></li>
+        {{ end }}
+        </ul>
+      </li>
+      {{ end }}
+    </ul>
+  </li>
+{{ end }}
+</ul>
+
 {{ .Content }}
