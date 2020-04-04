@@ -1,14 +1,15 @@
+<h2>via template<h2>
 <ul>
-{{ range $h1 := .TableOfContentsHeaders }}
+{{ range $h1 := .TableOfContentsCollection }}
   <li>
-    <a class="h1" href="{{ $h1.ID }}"> {{ $h1.Text | safeHTML }} </a>
+    <a class="h1" href="{{ $h1.ID }}"> {{ $h1.HTML }} </a>
     <ul> 
       {{ range $h2 := $h1.Headers }} 
       <li>
-        <a class="h2" href="{{ $h2.ID }}"> {{ $h2.Text | safeHTML }} </a>
+        <a class="h2" href="{{ $h2.ID }}"> {{ $h2.HTML }} </a>
         <ul>
         {{ range $h3 := $h2.Headers}}
-          <li><a class="h3" href="{{ $h3.ID }}"> {{ $h3.Text | safeHTML }} </a></li>
+          <li><a class="h3" href="{{ $h3.ID }}"> {{ $h3.HTML }} </a></li>
         {{ end }}
         </ul>
       </li>

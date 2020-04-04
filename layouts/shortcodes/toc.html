@@ -1,0 +1,25 @@
+
+<div style="border: solid 1px black">
+  <h1> via shortcode </h1>
+
+  <ul>
+  {{ range $h1 := $.Page.TableOfContentsCollection }}
+    <li>
+      <a class="h1" href="{{ $h1.ID }}"> {{ $h1.HTML }} </a>
+      <ul> 
+        {{ range $h2 := $h1.Headers }} 
+        <li>
+          <a class="h2" href="{{ $h2.ID }}"> {{ $h2.HTML }} </a>
+          <ul>
+          {{ range $h3 := $h2.Headers}}
+            <li><a class="h3" href="{{ $h3.ID }}"> {{ $h3.HTML }} </a></li>
+          {{ end }}
+          </ul>
+        </li>
+        {{ end }}
+      </ul>
+    </li>
+  {{ end }}
+  </ul>
+
+</div>
