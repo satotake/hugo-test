@@ -3,7 +3,7 @@
   <h1> via shortcode </h1>
 
   <ul>
-  {{ range $h1 := $.Page.TableOfContentsCollection }}
+  {{ range $h1 := $.Page.ContentData.TableOfContents }}
     <li>
       <a class="h1" href="{{ $h1.ID }}"> {{ $h1.HTML }} </a>
       <ul> 

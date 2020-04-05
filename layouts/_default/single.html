@@ -1,6 +1,6 @@
 <h2>via template<h2>
 <ul>
-{{ range $h1 := .TableOfContentsCollection }}
+{{ range $h1 := .ContentData.TableOfContents }}
   <li>
     <a class="h1" href="{{ $h1.ID }}"> {{ $h1.HTML }} </a>
     <ul> 
