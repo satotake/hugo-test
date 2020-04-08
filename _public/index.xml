@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://example.org/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2020 20:20:43 +0900</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>toc_level 1</title>
+      <link>http://example.org/proj/level1/</link>
+      <pubDate>Sat, 21 Mar 2020 20:20:43 +0900</pubDate>
+      
+      <guid>http://example.org/proj/level1/</guid>
+      <description> Intoroduction to cpp   Intoroduction to cpp history syntax variable assign control loop FAQ zsh pitfal </description>
+    </item>
+    
+    <item>
+      <title>toc_level 2</title>
+      <link>http://example.org/proj/level2/</link>
+      <pubDate>Sat, 21 Mar 2020 20:20:43 +0900</pubDate>
+      
+      <guid>http://example.org/proj/level2/</guid>
+      <description> Intoroduction to bash  history  syntax  FAQ   Intorodunction to cpp  history  syntax  pitfal  faq     Intoroduction to bash history syntax FAQ zsh pitfal Intorodunction to cpp history syntax pitfal faq </description>
+    </item>
+    
+  </channel>
+</rss>
