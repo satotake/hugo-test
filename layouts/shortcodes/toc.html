@@ -1,20 +1,15 @@
 <nav id="toc"> 
   <ul> 
-    <li> 
-      <ul> 
-        {{ range $h1 := $.Page.ContentData.TableOfContents }}
-          <li><a href="{{ $h1.ID }}">{{ $h1.HTML}}</a></li> 
+    {{ range $h1 := $.Page.ContentData.TableOfContents }}
+      <li><a href="{{ $h1.ID }}">{{ $h1.HTML }}</a></li>
 
-          {{ if len $h1.Headers | gt 0 }}
-          <ul>
-            {{ range $h2 := $h1.Headers}}
-            <li><a class="h2" href="{{ $h2.ID }}"> {{ $h2.HTML }} </a></li>
-            {{ end }}
-          </ul>
-          {{ end }}
-
+      {{ if len $h1.Headers | lt 0 }}
+        <ul>
+        {{ range $h2 := $h1.Headers }}
+          <li><a href="{{ $h2.ID }}">{{ replaceRE "<img.*?>" "" $h2.HTML }}</a></li>
         {{ end }}
-      </ul>
-    </li> 
-  </ul> 
+        </ul>
+      {{ end }}
+    {{ end }}
+  </ul>
 </nav> 
