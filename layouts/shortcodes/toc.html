@@ -1,20 +1,16 @@
 <nav id="toc"> 
-  <ul> 
-    <li> 
-      <ul> 
+    <ul>
         {{ range $h1 := $.Page.ContentData.TableOfContents }}
-          <li><a href="{{ $h1.ID }}">{{ $h1.HTML}}</a></li> 
+        <li><a href="{{ $h1.ID }}">{{ $h1.HTML}}</a></li>
 
-          {{ if len $h1.Headers | lt 0 }}
-          <ul>
+        {{ if len $h1.Headers | lt 0 | and (ge $.Page.Params.toc_level 2)}}
+        <ul>
             {{ range $h2 := $h1.Headers}}
             <li><a class="h2" href="{{ $h2.ID }}"> {{ $h2.HTML }} </a></li>
             {{ end }}
-          </ul>
-          {{ end }}
+        </ul>
+        {{ end }}
 
         {{ end }}
-      </ul>
-    </li> 
-  </ul> 
-</nav> 
+    </ul>
+</nav>
