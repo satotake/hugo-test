@@ -1,25 +1,20 @@
-
-<div style="border: solid 1px black">
-  <h1> via shortcode </h1>
-
-  <ul>
-  {{ range $h1 := $.Page.ContentData.TableOfContents }}
-    <li>
-      <a class="h1" href="{{ $h1.ID }}"> {{ $h1.HTML }} </a>
+<nav id="toc"> 
+  <ul> 
+    <li> 
       <ul> 
-        {{ range $h2 := $h1.Headers }} 
-        <li>
-          <a class="h2" href="{{ $h2.ID }}"> {{ $h2.HTML }} </a>
+        {{ range $h1 := $.Page.ContentData.TableOfContents }}
+          <li><a href="{{ $h1.ID }}">{{ $h1.HTML}}</a></li> 
+
+          {{ if len $h1.Headers | gt 0 }}
           <ul>
-          {{ range $h3 := $h2.Headers}}
-            <li><a class="h3" href="{{ $h3.ID }}"> {{ $h3.HTML }} </a></li>
-          {{ end }}
+            {{ range $h2 := $h1.Headers}}
+            <li><a class="h2" href="{{ $h2.ID }}"> {{ $h2.HTML }} </a></li>
+            {{ end }}
           </ul>
-        </li>
+          {{ end }}
+
         {{ end }}
       </ul>
-    </li>
-  {{ end }}
-  </ul>
-
-</div>
+    </li> 
+  </ul> 
+</nav> 
