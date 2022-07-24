@@ -8,18 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
 
     </head>
     <body>
         <ul>
-
-        {{ range site.RegularPages }}
-            <li>{{.Title}} // {{ .Date.Format "January 2, 2006 3:04 PM MST" }} // {{ .Date }}</li>
-
-        {{ end}}
-
+            {{ range $_, $form := .Site.Data.verbs }}
+                {{ range $_, $entry := $form }}
+                   <li>{{ .name }}</li>
+                {{ end }}
+            {{end}}
         </ul>
-
     </body>
 </html>
