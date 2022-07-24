@@ -14,7 +14,7 @@
         <ul>
             {{ range $_, $form := .Site.Data.verbs }}
                 {{ range $_, $entry := $form }}
-                   <li>{{ .name }}</li>
+                   <li>{{ $entry.name }}</li>
                 {{ end }}
             {{end}}
         </ul>
